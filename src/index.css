@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-overall {
+  background-color: #202525;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* NAVBAR */
+.navbar-container {
+  position: fixed;
+  border: solid 1px white;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
