@@ -16,7 +16,7 @@ function  Navbar() {
             <h3>menu</h3>
             <nav className="menu-list">
               <ul>
-                <li><span className="menu-icon"><RiHomeFill /></span> home</li>
+                <li className="navbar-active"><span className="menu-icon"><RiHomeFill /></span> home</li>
                 <li><span className="menu-icon"><RiCommunityLine /></span> community</li>
                 <li><span className="menu-icon"><RiCompassLine /></span> discovery</li>
                 <li><span className="menu-icon"><RiAlarmLine /></span> coming soon</li>

@@ -90,6 +90,22 @@ body {
   cursor: pointer;
 }
 
+.navbar-container .navbar-wrapper .menu-wrapper .menu-list li:hover,
+.navbar-container .navbar-wrapper .menu-wrapper .menu-list li.navbar-active {
+  border-right: solid 3px #db222a;
+  color: #ffffff;
+}
+
+.navbar-container .navbar-wrapper .menu-wrapper .menu-list li:hover span,
+.navbar-container
+  .navbar-wrapper
+  .menu-wrapper
+  .menu-list
+  li.navbar-active
+  span {
+  color: #db222a;
+}
+
 /* MOVIE EXTRA SECTION and subcards */
 .movieExtras-overall {
   position: fixed;
@@ -244,7 +260,6 @@ body {
 /* MAIN PAGE CONTENT */
 .main-container {
   width: calc(100% - 38%);
-  border: solid 1px red;
   margin-left: 18%;
   min-height: 100vh;
   padding: 40px;
@@ -256,10 +271,82 @@ body {
   color: #ffffff;
 }
 
-/* Caraousel-Tabs */
-.carousel-tabs_container .tab-header {
-  border: solid 1px white;
+.best-artists_collection {
+  display: grid;
+  grid-template-columns: 20%;
+  overflow-x: auto;
 }
+
+/* SCROLLBAR  */
+/* width */
+.best-artists_collection::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.best-artists_collection::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.best-artists_collection::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.best-artists_collection::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* --------------SCROLLBAR----- */
+
+.view-movie {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.view-movie .header-text {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.view-movie .view-movie_collection {
+  display: grid;
+  grid-template-columns: 32%;
+  overflow-x: auto;
+}
+
+/* SCROLLBAR  */
+/* width */
+.view-movie_collection::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.view-movie_collection::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.view-movie_collection::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.view-movie_collections::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* --------------SCROLLBAR----- */
+
+/*==================================== 
+Caraousel-Tabs COMPONENT
+======================================*/
+/* .carousel-tabs_container .tab-header {
+  border: solid 1px white;
+} */
 
 .carousel-tabs_container .tab-header ul {
   display: flex;
@@ -275,13 +362,167 @@ body {
   cursor: pointer;
 }
 
-.carousel-tabs_container .tab-header ul li:hover {
+.carousel-tabs_container .tab-header ul li:hover,
+.carousel-tabs_container .tab-header ul li.tab-active {
   color: #ffffff;
 }
 
 .carousel-tabs_container .carousel-container {
-  border: solid 1px red;
   height: 300px;
 }
 
-/* Best Artist Card */
+.carousel-subcontainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+}
+
+.carousel-img-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.carousel-content {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.movie-title-text {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 44px;
+  color: #ffffff;
+}
+
+.movie-genre-carousel {
+  margin: 0;
+  text-transform: uppercase;
+  color: #b9b5b5;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.button-container button {
+  padding: 12px 0px;
+  background-color: #db222a;
+  width: 120px;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.carousel_add_btn {
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important;
+  border: solid 1px transparent;
+  background-color: rgba(68, 67, 67, 0.5);
+  padding: 20px !important;
+  border-radius: 100%;
+  top: 35% !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 15px !important;
+  font-weight: 600;
+}
+
+/* Best Artist Card - COMPONENT*/
+.artist-card {
+  height: 200px;
+  border-radius: 18px;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.addBtn__container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addBtn__styled {
+  margin: 0;
+  border: solid 1px #8f8e8e;
+  background-color: #8f8e8e;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.artistName__styled {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.movieCount__styled {
+  color: #b9b5b5;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 2px;
+  text-transform: capitalize;
+}
+
+.cardRate__styled {
+  text-align: center;
+  color: gold;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* View Movie Card COMPONENT */
+.viewMovie-card {
+  height: 170px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.movieDetails__style {
+  width: 100%;
+  padding: 13px 10px;
+  background-color: #444343;
+}
+
+.movieCount__style {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
