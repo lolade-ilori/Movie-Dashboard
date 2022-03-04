@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:ital,wght@1,700&family=Mada:wght@300;500;600;700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,700&family=Open+Sans:wght@800&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap");
+
 body {
   margin: 0;
 }
 
 * {
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 .app-overall {
@@ -15,8 +18,270 @@ body {
 /* NAVBAR */
 .navbar-container {
   position: fixed;
-  border: solid 1px white;
+  border-right: solid 1px #575656;
   top: 0;
   left: 0;
   height: 100%;
+  width: 18%;
+  padding-top: 40px;
+  padding-left: 40px;
 }
+
+.navbar-container .navbar-wrapper {
+  width: 100%;
+  color: #b9b5b5;
+}
+
+.navbar-container .navbar-wrapper .header-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar-container .navbar-wrapper .header-name span {
+  color: #db222a;
+}
+
+.navbar-container .navbar-wrapper .header-name h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.navbar-container .navbar-wrapper .menu-wrapper {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.navbar-container .navbar-wrapper .menu-wrapper .menu-list_wrapper h3 {
+  text-transform: capitalize;
+  font-size: 15px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.navbar-container
+  .navbar-wrapper
+  .menu-wrapper
+  .menu-list_wrapper
+  h3:nth-of-type(2) {
+  margin-top: 30px;
+}
+
+.navbar-container .navbar-wrapper .menu-wrapper .menu-list:nth-of-type(1) {
+  margin-top: 30px;
+}
+
+.navbar-container .navbar-wrapper .menu-wrapper .menu-list ul {
+  padding: 0;
+  border: solid 1px transparent;
+}
+
+.navbar-container .navbar-wrapper .menu-wrapper .menu-list li {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* MOVIE EXTRA SECTION and subcards */
+.movieExtras-overall {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border: solid 1px #575656;
+  width: 20%;
+  padding: 20px 40px;
+  padding-top: 35px;
+  overflow-y: auto;
+}
+
+/* SCROLLBAR  */
+/* width */
+.movieExtras-overall::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.movieExtras-overall::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.movieExtras-overall::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.movieExtras-overall::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* SCROLLBAR----- */
+
+.searchbox {
+  display: flex;
+  border: solid 1px #8f8e8e;
+  width: 100%;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #8f8e8e;
+  align-items: center;
+  gap: 5px;
+}
+
+.searchbox input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  width: 80%;
+}
+
+.searchbox input::placeholder {
+  color: #8f8e8e;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* .moviesExtras-subcontainer {
+  border: solid 1px red;
+} */
+
+.movieExtras-overall h3.header-name {
+  margin-top: 25px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 24px;
+}
+
+.info-card .info-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.info-card .info-container .movie-pic {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  flex: 0.5;
+  border-radius: 8px;
+}
+
+.info-card .info-container .movie-pic img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.info-card .info-container .movie-desc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-card .info-container .movie-desc .top-info h4 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.info-card .info-container .movie-desc .top-info h5 {
+  margin: 0;
+  color: #8f8e8e;
+  overflow-x: hidden;
+}
+
+.info-card .info-container .movie-desc .bottom-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.info-card .info-container .movie-desc .bottom-info .imdb-pic {
+  overflow: hidden;
+  width: 100%;
+  flex: 0.4;
+}
+
+.info-card .info-container .movie-desc .bottom-info .imdb-pic img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.info-card .info-container .movie-desc .bottom-info h4 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.movieExtras-overall button {
+  width: 100%;
+  padding: 12px 0px;
+  background-color: #db222a;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* MAIN PAGE CONTENT */
+.main-container {
+  width: calc(100% - 38%);
+  border: solid 1px red;
+  margin-left: 18%;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.best-artists .header-text {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+/* Caraousel-Tabs */
+.carousel-tabs_container .tab-header {
+  border: solid 1px white;
+}
+
+.carousel-tabs_container .tab-header ul {
+  display: flex;
+  padding: 0;
+  gap: 30px;
+  font-size: 15px;
+}
+
+.carousel-tabs_container .tab-header ul li {
+  list-style: none;
+  color: #b9b5b5;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.carousel-tabs_container .tab-header ul li:hover {
+  color: #ffffff;
+}
+
+.carousel-tabs_container .carousel-container {
+  border: solid 1px red;
+  height: 300px;
+}
+
+/* Best Artist Card */
