@@ -1,6 +1,6 @@
 
 
-function ViewMovieCard() {
+function ViewMovieCard({movie}) {
   return (
     <div className="viewMovie-card"
     style={{

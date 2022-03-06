@@ -1,8 +1,16 @@
+import { useEffect , useContext} from "react"
 import BestArtistsCard from "../../components/BestArtistsCard"
 import CarouselTabs from "../../components/CarouselTabs"
 import ViewMovieCard from "../../components/ViewMovieCard"
+import MovieContext from "../../context/movie/MovieContext"
 
 function Main() {
+    const {popularMovie, getPopularMovies} = useContext(MovieContext)
+
+    useEffect(() => {
+        getPopularMovies()
+    }, [])
+
   return (
     <div className="main-container">
         <CarouselTabs />
@@ -17,7 +25,9 @@ function Main() {
         <section className="view-movie">
             <div className="header-text"><h3>continue watching</h3></div>
             <div className="view-movie_collection">
-                <ViewMovieCard />
+                {popularMovie?.map((movie) => (
+                    <ViewMovieCard key={movie.id} movie={movie}/>
+                ))}
             </div>
         </section>
     </div>

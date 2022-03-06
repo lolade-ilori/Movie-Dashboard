@@ -301,7 +301,7 @@ body {
 /* --------------SCROLLBAR----- */
 
 .view-movie {
-  width: 100%;
+  max-width: 1200px;
   margin-top: 40px;
 }
 
@@ -314,7 +314,11 @@ body {
 
 .view-movie .view-movie_collection {
   display: grid;
-  grid-template-columns: 32%;
+  border: solid 1px red;
+  grid-template-columns: 30% 30% 30%;
+  gap: 15px;
+  grid-auto-flow: column;
+  grid-auto-columns: 30%;
   overflow-x: auto;
 }
 
@@ -322,6 +326,7 @@ body {
 /* width */
 .view-movie_collection::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
