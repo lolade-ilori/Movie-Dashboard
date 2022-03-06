@@ -13,6 +13,8 @@ import 'swiper/css/scrollbar';
 function CarouselTabs() {
     const {netflixMovie, getCarouselMovies} = useContext(MovieContext)
 
+    const genre = "https://api.themoviedb.org/3/movie/"
+
     useEffect(() => {
         getCarouselMovies()
     }, [])
