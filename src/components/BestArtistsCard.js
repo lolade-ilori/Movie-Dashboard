@@ -1,11 +1,12 @@
 import { RiAddFill } from "react-icons/ri"
+import { imgUrl } from "../context/movie/MovieContext"
 
 
-function BestArtistsCard() {
+function BestArtistsCard({actor}) {
   return (
     <div className="artist-card"
     style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTkqugX0WLc78TSUXjzYAQvwT7nqU8vJknuJGldrNv0FO7kD8vl")`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgUrl}${actor.profile_path})`,
         backgroundSize:'cover', backgroundRepeat:'no-repeat'
     }}
     >
@@ -13,8 +14,8 @@ function BestArtistsCard() {
             <p className="addBtn__styled"><RiAddFill  size={25}/></p>
         </div>
         <div className="cardDetails__styled">
-            <h3 className="artistName__styled">Keanu Reaves</h3>
-            <p className="movieCount__styled">+27 Movies</p>
+            <h3 className="artistName__styled">{actor.name}</h3>
+            <p className="movieCount__styled">+{actor.known_for.length} Movies</p>
             <p className="cardRate__styled">5 star</p>
         </div>  
     </div>

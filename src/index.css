@@ -273,7 +273,10 @@ body {
 
 .best-artists_collection {
   display: grid;
-  grid-template-columns: 20%;
+  grid-template-columns: 20% 20% 20%;
+  gap: 15px;
+  grid-auto-flow: column;
+  grid-auto-columns: 20%;
   overflow-x: auto;
 }
 
@@ -281,6 +284,7 @@ body {
 /* width */
 .best-artists_collection::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 /* Track */
@@ -314,7 +318,6 @@ body {
 
 .view-movie .view-movie_collection {
   display: grid;
-  border: solid 1px red;
   grid-template-columns: 30% 30% 30%;
   gap: 15px;
   grid-auto-flow: column;
@@ -481,6 +484,12 @@ Caraousel-Tabs COMPONENT
   cursor: pointer;
 }
 
+.cardDetails__styled {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .artistName__styled {
   margin: 0;
   font-size: 14px;
@@ -522,6 +531,9 @@ Caraousel-Tabs COMPONENT
   width: 100%;
   padding: 13px 10px;
   background-color: #444343;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movieCount__style {

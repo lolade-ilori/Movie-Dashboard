@@ -5,10 +5,11 @@ import ViewMovieCard from "../../components/ViewMovieCard"
 import MovieContext from "../../context/movie/MovieContext"
 
 function Main() {
-    const {popularMovie, getPopularMovies} = useContext(MovieContext)
+    const {popularMovie, getPopularMovies, popularActor, getPopularActors} = useContext(MovieContext)
 
     useEffect(() => {
         getPopularMovies()
+        getPopularActors()
     }, [])
 
   return (
@@ -18,7 +19,9 @@ function Main() {
         <section className="best-artists">
             <div className="header-text"><h3>best artists</h3></div>
             <div className="best-artists_collection">
-                <BestArtistsCard />
+                {popularActor?.map((actor) => (
+                    <BestArtistsCard key={actor.id} actor={actor}/>
+                ))}
             </div>
         </section>
 
