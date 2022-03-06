@@ -12,6 +12,7 @@ export const MovieProvider = ({children}) => {
     const [popularMovie, setPopularMovie] = useState()
     const [popularActor, setPopularActor] = useState()
     const [netflixMovie, setNetflixMovie] = useState()
+    // const [movieGenre, setMovieGenre] = useState()
 
     // Getting Popular Movies API
     const getPopularMovies = async () => {
@@ -43,6 +44,15 @@ export const MovieProvider = ({children}) => {
         setNetflixMovie(carouselMovie)  
     }
 
+    // // Getting Movie Genre
+    // const getMovieGenre  = async () => {
+    //     const response = await fetch(`${baseUrl}/genre/tv/list?api_key=${API_KEY}&language=en-US`)
+
+    //     const data = await response.json()
+    //     console.log(data)
+    //     setMovieGenre(data)
+    // }
+
 
     return <MovieContext.Provider value={{
         popularMovie,
@@ -50,7 +60,7 @@ export const MovieProvider = ({children}) => {
         netflixMovie,
         getPopularMovies,
         getPopularActors,
-        getCarouselMovies
+        getCarouselMovies,
     }}>
         {children}
     </MovieContext.Provider>

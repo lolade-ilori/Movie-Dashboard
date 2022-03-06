@@ -53,7 +53,7 @@ function CarouselTabs() {
                             <div className="carousel-content">
                                 <div className="movie-text-content">
                                     <h2 className='movie-title-text'>{netflixMovies.name}</h2>
-                                    <h5 className='movie-genre-carousel'>action adventure comedy</h5>
+                                    <h5 className='movie-genre-carousel'>{netflixMovies.media_type}</h5>
                                     <div className="button-container">
                                         <button onClick={() => console.log('slider')}>watch</button>
                                             <p className="addBtn__styled carousel_add_btn"><RiAddFill  size={25}/></p>
