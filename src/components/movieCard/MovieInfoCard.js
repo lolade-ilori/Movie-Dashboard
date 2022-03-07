@@ -6,7 +6,7 @@ function MovieInfoCard() {
     <div className="info-card">
         <div className="info-container">
             <div className="movie-pic">
-                <img src={JohnWick} />
+                <img src={JohnWick}  alt=""/>
             </div>
 
             <div className="movie-desc">
@@ -17,7 +17,7 @@ function MovieInfoCard() {
 
                 <div className="bottom-info">
                     <div className="imdb-pic">
-                        <img src={imdb} />
+                        <img src={imdb} alt="" />
                     </div>
                     <h4 className="movie-rating">7.4</h4>
                 </div>
@@ -26,7 +26,7 @@ function MovieInfoCard() {
 
         <div className="info-container">
             <div className="movie-pic">
-                <img src={JohnWick} />
+                <img src={JohnWick} alt=""/>
             </div>
 
             <div className="movie-desc">
@@ -37,7 +37,7 @@ function MovieInfoCard() {
 
                 <div className="bottom-info">
                     <div className="imdb-pic">
-                        <img src={imdb} />
+                        <img src={imdb} alt="imdb"/>
                     </div>
                     <h4 className="movie-rating">7.4</h4>
                 </div>
