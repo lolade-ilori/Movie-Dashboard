@@ -1,5 +1,4 @@
 import { imgUrl } from "../context/movie/MovieContext"
-import MovieExtras from "./extras/MovieExtras"
 
 
 function ViewMovieCard({movie}) {
