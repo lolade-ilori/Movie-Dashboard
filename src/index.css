@@ -543,3 +543,8 @@ Caraousel-Tabs COMPONENT
   font-weight: 600;
   text-transform: capitalize;
 }
+
+/* star rating */
+.starRating__styled {
+  width: 15px;
+}
