@@ -180,6 +180,7 @@ body {
   font-weight: 600;
   text-transform: capitalize;
   margin-bottom: 24px;
+  border: solid 1px red;
 }
 
 .info-card .info-container {
