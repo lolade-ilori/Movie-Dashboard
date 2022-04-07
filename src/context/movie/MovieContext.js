@@ -45,7 +45,7 @@ export const MovieProvider = ({children}) => {
         setNetflixMovie(carouselMovie)  
     }
 
-    // Getting Movie Genre
+    // Getting FamousMovies
     const getFamousMovies  = async () => {
         const response = await fetch(`${baseUrl}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
 
@@ -55,17 +55,34 @@ export const MovieProvider = ({children}) => {
         setFamousMovies(famousMovie)
     }
 
+    // Get MovieGenre
+    const getMovieGenres = async () => {
+        const response = await fetch(`${baseUrl}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+
+        const data = await response.json()
+        const dataGenre =  data.genres
+        const dataGenreResults = dataGenre.reduce((genres, gen) => {
+            const { id, name } = gen
+            genres[id] = name
+            return genres
+        }, [])
+        console.log(dataGenreResults)
+        setMovieGenre(dataGenreResults)
+
+    }
+
 
     return <MovieContext.Provider value={{
         popularMovie,
         popularActor,
         netflixMovie,
-        movieGenre,
         famousMovies,
+        movieGenre,
         getPopularMovies,
         getPopularActors,
         getCarouselMovies,
-        getFamousMovies
+        getFamousMovies,
+        getMovieGenres
     }}>
         {children}
     </MovieContext.Provider>

@@ -169,9 +169,28 @@ body {
   font-weight: 600;
 }
 
-/* .moviesExtras-subcontainer {
-  border: solid 1px red;
-} */
+.moviesExtras-subcontainer {
+  margin-top: 15px;
+}
+
+.moviesExtras-subcontainer .movieExtras-inner {
+  height: 370px;
+  margin-bottom: 10px;
+  overflow-y: auto  ;
+}
+
+.moviesExtras-subcontainer .movieExtras-inner::-webkit-scrollbar {
+  width: .4em;
+}
+
+.moviesExtras-subcontainer .movieExtras-inner::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.moviesExtras-subcontainer .movieExtras-inner::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
 
 .movieExtras-overall h3.header-name {
   margin-top: 25px;
@@ -180,7 +199,6 @@ body {
   font-weight: 600;
   text-transform: capitalize;
   margin-bottom: 24px;
-  border: solid 1px red;
 }
 
 .info-card .info-container {
@@ -190,7 +208,7 @@ body {
 }
 
 .info-card .info-container .movie-pic {
-  height: auto;
+  height: 80px;
   width: 100%;
   overflow: hidden;
   flex: 0.5;
@@ -198,10 +216,12 @@ body {
 }
 
 .info-card .info-container .movie-pic img {
-  height: auto;
+  height: 100%;
   max-width: 100%;
-  display: block;
-  border-radius: 8px;
+  /* display: block; */
+  /* border-radius: 8px; */
+  object-fit: cover;
+  object-position: center;
 }
 
 .info-card .info-container .movie-desc {
@@ -221,7 +241,10 @@ body {
 .info-card .info-container .movie-desc .top-info h5 {
   margin: 0;
   color: #8f8e8e;
-  overflow-x: hidden;
+  width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .info-card .info-container .movie-desc .bottom-info {
