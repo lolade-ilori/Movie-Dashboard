@@ -1,5 +1,3 @@
-import {useEffect} from 'react'
-import JohnWick from '../../assets/img/JohnWick.jpg'
 import imdb from '../../assets/img/imdb.png'
 
 const MovieInfoCard = ({movieTitle, movieImg, movieRating, movieGenre}) => {

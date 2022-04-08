@@ -4,13 +4,14 @@ import MovieInfoCard from '../movieCard/MovieInfoCard'
 import MovieContext, {imgUrl} from '../../context/movie/MovieContext'
 
 function MovieExtras() {
-const {famousMovies, getFamousMovies, getMovieGenres, movieGenre} = useContext(MovieContext)
+const {famousMovies, getFamousMovies, getMovieGenres, movieGenre, getFavoriteMovie, favoriteMovie} = useContext(MovieContext)
 const [searchTerm, setSearchTerm] = useState('');
 const [find, setFind] = useState([]) 
 
 useEffect(() => {
   getFamousMovies()
   getMovieGenres()
+  getFavoriteMovie()
 }, [])
 
 
@@ -46,7 +47,9 @@ console.log('>>>>>>+++++', find)
 
         <div className="movieExtras-inner">
           <h3 className='header-name'>favorites</h3>
-          <MovieInfoCard />
+          {favoriteMovie?.map((favMovie) => (
+            <MovieInfoCard key={favMovie.id} movieTitle={favMovie.title || favMovie.original_title} movieImg={(`${imgUrl}${favMovie.backdrop_path}`)}  movieRating={favMovie.vote_average}/>
+          ))}
         </div>
         <button> See More </button>
       </div>
