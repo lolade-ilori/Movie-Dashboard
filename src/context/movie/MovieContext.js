@@ -15,49 +15,59 @@ export const MovieProvider = ({children}) => {
     const [movieGenre, setMovieGenre] = useState()
     const [famousMovies, setFamousMovies] = useState()
     const [favoriteMovie, setFavoriteMovie] = useState()
+    const [loading, setLoading] = useState(false)
 
     // Getting Popular Movies API
     const getPopularMovies = async () => {
+        // setLoading(true)
         const response = await fetch(`${baseUrl}/trending/all/week?api_key=${API_KEY}&language=en-US`)
 
         const data = await response.json()
         // console.log(data.results)
         const popMovie = data.results
         setPopularMovie(popMovie)
+        // setLoading(false)
     }
 
     // Getting Popular Actors API
     const getPopularActors = async () => {
+        // setLoading(true)
         const response = await fetch(`${baseUrl}/person/popular?api_key=${API_KEY}&language=en-US&page=1`)
 
         const data = await response.json()
         // console.log(data.results)
         const popActor = data.results
         setPopularActor(popActor)
+        // setLoading(false)
     }
 
     // Getting Netflix Movies API(Fort the Carousel)
     const getCarouselMovies = async () => {
+        // setLoading(true)
         const response = await fetch(`${baseUrl}/discover/tv?api_key=${API_KEY}&with_networks=213`)
 
         const data = await response.json()
         const carouselMovie = data.results
         console.log(carouselMovie)
         setNetflixMovie(carouselMovie)  
+        // setLoading(false)
     }
 
     // Getting FamousMovies
     const getFamousMovies  = async () => {
+        setLoading(true)
         const response = await fetch(`${baseUrl}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
 
         const data = await response.json()
         const famousMovie = data.results
         console.log(famousMovie)
         setFamousMovies(famousMovie)
+        setLoading(false)
     }
 
     // Get MovieGenre
     const getMovieGenres = async () => {
+        // setLoading(true)
         const response = await fetch(`${baseUrl}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
 
         const data = await response.json()
@@ -69,16 +79,19 @@ export const MovieProvider = ({children}) => {
         }, [])
         console.log(dataGenreResults)
         setMovieGenre(dataGenreResults)
+        // setLoading(false)
 
     }
 
     // Get Favorite Mvoies
     const getFavoriteMovie = async () => {
+        // setLoading(true)
         const response = await fetch(`${baseUrl}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
 
         const data = await response.json()
         const dataResults = data.results;
         setFavoriteMovie(dataResults)
+        // setLoading(false)
     }
 
 
@@ -89,6 +102,7 @@ export const MovieProvider = ({children}) => {
         famousMovies,
         movieGenre,
         favoriteMovie,
+        loading,
         getPopularMovies,
         getPopularActors,
         getCarouselMovies,

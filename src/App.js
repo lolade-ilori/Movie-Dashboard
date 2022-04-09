@@ -1,16 +1,21 @@
 import MovieExtras from './components/extras/MovieExtras'
 import Navbar from './components/navbar/Navbar'
 import Main from './pages/main/Main'
-import {MovieProvider} from './context/movie/MovieContext'
+import MovieContext, {MovieProvider} from './context/movie/MovieContext'
+import { useContext } from 'react'
 
-function App() {
+function App() { 
+  // const {loading} = useContext(MovieContext)
+
   return (
     <MovieProvider>
-        <div className='app-overall'>
-            <Navbar />
-            <Main />
-            <MovieExtras />
-        </div>
+        {/* {loading ? <div>LOADING</div> : */}
+          <div className='app-overall'>
+              <Navbar />
+              <Main />
+              <MovieExtras />
+          </div>
+        {/* } */}
     </MovieProvider>
   )
 }

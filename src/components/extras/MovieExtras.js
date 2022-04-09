@@ -4,7 +4,7 @@ import MovieInfoCard from '../movieCard/MovieInfoCard'
 import MovieContext, {imgUrl} from '../../context/movie/MovieContext'
 
 function MovieExtras() {
-const {famousMovies, getFamousMovies, getMovieGenres, movieGenre, getFavoriteMovie, favoriteMovie} = useContext(MovieContext)
+const {famousMovies, getFamousMovies, getMovieGenres, movieGenre, getFavoriteMovie, favoriteMovie, loading} = useContext(MovieContext)
 const [searchTerm, setSearchTerm] = useState('');
 const [find, setFind] = useState([]) 
 
@@ -12,11 +12,13 @@ useEffect(() => {
   getFamousMovies()
   getMovieGenres()
   getFavoriteMovie()
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
 
 
 useEffect(() => {
-  const filteredData = famousMovies?.filter(movie => movie?.original_title?.toLowerCase().includes(searchTerm?.toLowerCase()) || movie?.title?.toLowerCase().includes(searchTerm?.toLowerCase()),);
+  const filteredData = famousMovies?.filter(movie => movie?.original_title?.toLowerCase().includes(searchTerm?.toLowerCase()) || movie?.title?.toLowerCase().includes(searchTerm?.toLowerCase()));
   setFind(filteredData)
 } , [famousMovies, searchTerm])
 
@@ -37,7 +39,8 @@ console.log('>>>>>>+++++', find)
       <div className="moviesExtras-subcontainer">
         <div className="movieExtras-inner">
           <h3 className='header-name'>popular movies</h3>
-          {find?.map((famMovies) => (
+
+          {loading? <h1 style={{color:'white', fontSize: '25px', fontWeight: '600px'}}>LOADING</h1> : find?.map((famMovies) => (
               <MovieInfoCard key={famMovies.id} movieTitle={famMovies.title || famMovies.original_title} movieImg={(`${imgUrl}${famMovies.backdrop_path}`)} movieRating={famMovies.vote_average} movieGenre={famMovies.genre_ids.map(id => {
                 return movieGenre[id]
               })} />
