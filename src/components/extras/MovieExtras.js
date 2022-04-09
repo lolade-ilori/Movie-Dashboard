@@ -1,17 +1,28 @@
 import { RiSearchLine } from 'react-icons/ri'
-import {useContext, useState, useEffect} from 'react'
+import {useContext, useState, useEffect, useRef} from 'react'
 import MovieInfoCard from '../movieCard/MovieInfoCard'
 import MovieContext, {imgUrl} from '../../context/movie/MovieContext'
 
 function MovieExtras() {
-const {famousMovies, getFamousMovies, getMovieGenres, movieGenre, getFavoriteMovie, favoriteMovie, loading} = useContext(MovieContext)
+const {famousMovies, getFamousMovies, getMovieGenres, movieGenre, getFavoriteMovie, favoriteMovie} = useContext(MovieContext)
 const [searchTerm, setSearchTerm] = useState('');
 const [find, setFind] = useState([]) 
+const [loading, setLoading] = useState(false)
+
+const isMounted = useRef(true)
 
 useEffect(() => {
-  getFamousMovies()
+  setLoading(true)
   getMovieGenres()
+  if (isMounted.current) {
+    getFamousMovies()
+    setLoading(false)
+  }
   getFavoriteMovie()
+
+  return () => {
+    isMounted.current = false
+}
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])

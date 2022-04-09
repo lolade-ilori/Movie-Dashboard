@@ -15,7 +15,6 @@ export const MovieProvider = ({children}) => {
     const [movieGenre, setMovieGenre] = useState()
     const [famousMovies, setFamousMovies] = useState()
     const [favoriteMovie, setFavoriteMovie] = useState()
-    const [loading, setLoading] = useState(false)
 
     // Getting Popular Movies API
     const getPopularMovies = async () => {
@@ -55,14 +54,12 @@ export const MovieProvider = ({children}) => {
 
     // Getting FamousMovies
     const getFamousMovies  = async () => {
-        setLoading(true)
         const response = await fetch(`${baseUrl}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
 
         const data = await response.json()
         const famousMovie = data.results
         console.log(famousMovie)
         setFamousMovies(famousMovie)
-        setLoading(false)
     }
 
     // Get MovieGenre
@@ -102,7 +99,6 @@ export const MovieProvider = ({children}) => {
         famousMovies,
         movieGenre,
         favoriteMovie,
-        loading,
         getPopularMovies,
         getPopularActors,
         getCarouselMovies,
